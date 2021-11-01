@@ -22,3 +22,4 @@ spec:
         - containerPort: 80
           name: ssapp-port
           protocol: TCP
+          _serviceType: NodePort
