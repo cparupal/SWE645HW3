@@ -22,4 +22,4 @@ spec:
         - containerPort: 8080
           name: ssapi-port
           protocol: TCP
-        type: NodePort
+      type: NodePort
