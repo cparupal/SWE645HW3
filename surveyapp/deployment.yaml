@@ -17,7 +17,7 @@ spec:
       containers:
       - image: cparupal/studentsurveyapp:0.4
         imagePullPolicy: Always
-        name: studentsurvey
+        name: studentsurveyapp
         ports:
         - containerPort: 80
           name: ssapp-port
