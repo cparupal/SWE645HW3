@@ -10,7 +10,7 @@ pipeline {
           checkout scm
           sh 'pwd'
           sh "docker login -u cparupal -p $DOCKERHUB_PASS_PSW"
-          sh "docker build -t cparupal/studentsurveyapi:${env.BUILD_ID} SWE645HW3/surveyapi"
+          sh "docker build -t cparupal/studentsurveyapi:${env.BUILD_ID} surveyapi"
           
         }
       }
