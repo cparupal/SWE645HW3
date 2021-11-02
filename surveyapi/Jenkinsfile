@@ -8,9 +8,8 @@ pipeline {
       steps {
         script {
           checkout scm
-          sh 'cd SWE645HW3/surveyapi'
           sh "docker login -u cparupal -p $DOCKERHUB_PASS_PSW"
-          sh "docker build -t cparupal/studentsurveyapi:${env.BUILD_ID} ."
+          sh "docker build -t cparupal/studentsurveyapi:${env.BUILD_ID} SWE645HW3/surveyapi"
           
         }
       }
