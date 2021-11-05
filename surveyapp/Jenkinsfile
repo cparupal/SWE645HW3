@@ -1,0 +1,27 @@
+pipeline {
+  agent any
+  environment {
+    DOCKERHUB_PASS = credentials('docker-pass')
+  }
+  stages {
+    stage ("Building the web app into a docker image"){
+      steps {
+        script {
+          checkout scm
+          sh "docker login -u cparupal -p $DOCKERHUB_PASS_PSW"
+          sh "docker build -t cparupal/studentsurveyapp:${env.BUILD_ID} surveyapp"
+          
+        }
+      }
+    }
+    
+    stage("Pushing Image to Dockerhub"){
+      steps{
+        script{
+          sh "docker push cparupal/studentsurveyapi:${env.BUILD_ID}"
+        }
+      }
+    }
+
+  }
+}
