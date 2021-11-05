@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Successful Survey Submission</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="w3-light-grey">
+  <div class="w3-content w3-margin-top">
+    <div class="w3-center w3-whole w3-container w3-card w3-white w3-margin-bottom">
+      <h3>You have successfully submitted the survey. Have a great day!</h3>
+    </div>
+  </div>
+  <div class="w3-content w3-margin-top" style="max-width: 1400px;">
+    <div class="w3-whole w3-container w3-card w3-white w3-margin-bottom">
+      <div class="w3-center w3-xlarge">Student Questionnaire</div>
+      <div class="w3-whole">
+        <table class="w3-table-all">
+          <thead>
+            <tr>
+              <th>Question</th>
+              <th>Answer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><label for="firstName">First Name:</label></td>
+              <td><label>{{info.firstName}}</label></td>
+            </tr>
+            <tr>
+              <td><label for="lastName">Last Name:</label></td>
+              <td><label >{{info.lastName}}</label></td>
+            </tr>
+            <tr>
+              <td><label for="streetAddress">Street
+                  Address:</label></td>
+              <td><label >{{info.streetAddress}}</label></td>
+            </tr>
+            <tr>
+              <td><label for="city">City:</label></td>
+              <td><label >{{info.city}}</label></td>
+            </tr>
+            <tr>
+              <td><label for="state">State:</label></td>
+              <td><label >{{info.city}}</label></td>
+            </tr>
+            <tr>
+              <td><label for="zip">ZIP:</label></td>
+              <td><label >{{info.zip}}</label></td>
+            </tr>
+            <tr>
+              <td><label for="telephoneNumber">Telephone
+                  Number:</label></td>
+              <td><label >{{info.telephoneNumber}}</label></td>
+            </tr>
+            <tr>
+              <td><label for="email">Email:</label></td>
+              <td><label >{{info.email}}</label></td>
+            </tr>
+            <tr>
+              <td><label for="dateOfSurvey">Date of Survey:</label></td>
+              <td><label >{{info.dateOfSurvey}}</label></td>
+            </tr>
+            <tr>
+              <td>What did you like most about the campus? (You
+                can select multiple)</td>
+              <td>
+                <div>
+                  <label *ngIf="info.likedStudents" class="gpaz4-checkbox-label">Students</label>
+                </div>
+                <div>
+                  <label *ngIf="info.likedLocation" class="gpaz4-checkbox-label">Location</label>
+                </div>
+                <div>
+                  <label *ngIf="info.likedCampus" class="gpaz4-checkbox-label">Campus</label>
+                </div>
+                <div>
+                  <label *ngIf="info.likedAtmosphere" class="gpaz4-checkbox-label">Atmosphere</label>
+                </div>
+                <div>
+                  <label *ngIf="info.likedDormRooms" class="gpaz4-checkbox-label">Dorm
+                    Rooms</label>
+                </div>
+                <div>
+                  <label *ngIf="info.likedSports" for="likedSports" class="gpaz4-checkbox-label">Sports</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="interestedBy">Interested
+                  by:</label></td>
+              <td>
+                <label *ngIf="info.interestedBy">{{info.interestedBy}}</label>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="schoolRecommendation">Likelihood
+                  of recommending school to other prospective
+                  students:</label></td>
+              <td>
+                <label *ngIf="info.schoolRecommendation">{{info.schoolRecommendation}}</label>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="raffleEntry">Raffle entry
+                  (enter at least ten comma separated numbers ranging
+                  from 1 through 100):</label></td>
+              <td>
+                <label *ngIf="info.raffleEntry">{{info.raffleEntry}}</label>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="additionalComments">Additional
+                  comments:</label></td>
+              <td>
+                <label *ngIf="info.additionalComments">{{info.additionalComments}}</label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

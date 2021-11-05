@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>All Surveys</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="w3-light-grey">
+  <div class="w3-content w3-margin-top" style="max-width: 1400px;">
+    <div class="w3-whole w3-container w3-card w3-white w3-margin-bottom">
+      <div class="w3-center w3-xlarge">All Surveys</div>
+      <div class="w3-whole" style="padding-bottom:1em;">
+        <table class="w3-table-all">
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Street Address</th>
+              <th>City</th>
+              <th>State</th>
+              <th>ZIP</th>
+              <th>Telephone Number</th>
+              <th>Email</th>
+              <th>Date of Survey</th>
+              <th>What did you like most about the campus?</th>
+              <th>Interested by</th>
+              <th>Likelihood
+                of recommending school to other prospective
+                students</th>
+              <th>Raffle Entry</th>
+              <th>Additional Comments</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let survey of info">
+              <td><label>{{survey.firstName}}</label></td>
+              <td><label>{{survey.lastName}}</label></td>
+              <td><label>{{survey.streetAddress}}</label></td>
+              <td><label>{{survey.city}}</label></td>
+              <td><label>{{survey.state}}</label></td>
+              <td><label>{{survey.zip}}</label></td>
+              <td><label>{{survey.telephoneNumber}}</label></td>
+              <td><label>{{survey.email}}</label></td>
+              <td><label>{{survey.dateOfSurvey}}</label></td>
+              <td>
+                <div>
+                  <label *ngIf="survey.likedStudents" class="gpaz4-checkbox-label">Students</label>
+                </div>
+                <div>
+                  <label *ngIf="survey.likedLocation" class="gpaz4-checkbox-label">Location</label>
+                </div>
+                <div>
+                  <label *ngIf="survey.likedCampus" class="gpaz4-checkbox-label">Campus</label>
+                </div>
+                <div>
+                  <label *ngIf="survey.likedAtmosphere" class="gpaz4-checkbox-label">Atmosphere</label>
+                </div>
+                <div>
+                  <label *ngIf="survey.likedDormRooms" class="gpaz4-checkbox-label">Dorm
+                    Rooms</label>
+                </div>
+                <div>
+                  <label *ngIf="survey.likedSports" for="likedSports" class="gpaz4-checkbox-label">Sports</label>
+                </div>
+              </td>
+              <td>
+                <label *ngIf="survey.interestedBy">{{survey.interestedBy}}</label>
+              </td>
+              <td>
+                <label *ngIf="survey.schoolRecommendation">{{survey.schoolRecommendation}}</label>
+              </td>
+              <td>
+                <label *ngIf="survey.raffleEntry">{{survey.raffleEntry}}</label>
+              </td>
+              <td>
+                <label *ngIf="survey.additionalComments">{{survey.additionalComments}}</label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
