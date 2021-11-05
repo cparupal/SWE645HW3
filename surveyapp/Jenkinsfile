@@ -18,7 +18,7 @@ pipeline {
     stage("Pushing Image to Dockerhub"){
       steps{
         script{
-          sh "docker push cparupal/studentsurveyapi:${env.BUILD_ID}"
+          sh "docker push cparupal/studentsurveyapp:${env.BUILD_ID}"
         }
       }
     }
