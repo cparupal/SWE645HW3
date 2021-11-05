@@ -14,7 +14,8 @@ pipeline {
           def mvnCMD = "${mvnHome}/bin/mvn"
           sh "${mvnCMD} -f surveyapi/pom.xml clean package"
           sh "docker login -u cparupal -p $DOCKERHUB_PASS_PSW"
-          sh "docker build -t cparupal/studentsurveyapi:${env.BUILD_ID} surveyapi"
+          sh 'mv surveyapi/Dockerfile surveyapi/target/'
+          sh "docker build -t cparupal/studentsurveyapi:${env.BUILD_ID} surveyapi/target"
           
         }
       }
