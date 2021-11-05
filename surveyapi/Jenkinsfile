@@ -10,6 +10,9 @@ pipeline {
           checkout scm
           sh 'pwd'
           sh 'whoami'
+          def mvnHome = tool name: 'Maven3', type: 'maven'
+          def mvnCMD = "${mvnHome}/bin/mvn"
+          sh "${mvnCMD} clean package"
           sh "docker login -u cparupal -p $DOCKERHUB_PASS_PSW"
           sh "docker build -t cparupal/studentsurveyapi:${env.BUILD_ID} surveyapi"
           
