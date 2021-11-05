@@ -16,7 +16,7 @@ pipeline {
           sh "docker login -u cparupal -p $DOCKERHUB_PASS_PSW"
           sh 'cd surveyapi'
           sh 'pwd'
-          sh "docker build -t cparupal/studentsurveyapi:${env.BUILD_ID} ."
+          sh "docker build -t cparupal/studentsurveyapi:${env.BUILD_ID} surveyapi/Dockerfile"
           sh 'cd ..'
           sh 'pwd'
           
