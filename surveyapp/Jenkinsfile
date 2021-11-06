@@ -30,7 +30,6 @@ pipeline {
           sh "git config --global user.email 'chetana.p98@gmail.com'"
           sh 'git remote set-url origin git@github.com:cparupal/SWE645HW3.git'
           sh 'git clone git@github.com:cparupal/SWE645HW3.git'
-          sh 'pwd'
           dir('SWE645HW3'){
             sh 'git checkout main'
             sh 'git pull'
