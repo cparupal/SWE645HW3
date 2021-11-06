@@ -45,6 +45,7 @@ export class SurveyService {
           this.handleError(err);
         }
       );
+    //
   }
 
   loadSurveys(callback: Function, component: any) {
