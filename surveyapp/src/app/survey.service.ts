@@ -19,7 +19,7 @@ export class SurveyService {
   constructor(private client: HttpClient) {}
 
   sendSurvey(data: any, callback: Function, router: Router) {
-    var apiUrl: string = "http://50.17.123.193/surveys/surveyForm";
+    var apiUrl: string = "http://3.88.211.147//surveys/surveyForm";
 
     this.client
       .post(
@@ -49,7 +49,7 @@ export class SurveyService {
   }
 
   loadSurveys(callback: Function, component: any) {
-    var apiUrl: string = "http://50.17.123.193/surveys/surveyForms";
+    var apiUrl: string = "http://3.88.211.147/surveys/surveyForms";
     this.client
       .get(
         apiUrl,
