@@ -26,11 +26,14 @@ pipeline {
     stage("Updating deployment.yaml file with new Build"){
       steps{
         script{
-          sh 'rm -rf SWE645HW3'
+          sh 'rm -rf SWE645HW3_argoCD'
           sh "git config --global user.email 'chetana.p98@gmail.com'"
-          sh 'git remote set-url origin git@github.com:cparupal/SWE645HW3.git'
-          sh 'git clone git@github.com:cparupal/SWE645HW3.git'
-          dir('SWE645HW3'){
+          sh 'git remote set-url origin git@github.com:cparupal/SWE645HW3_argoCD.git'
+          sh 'git clone git@github.com:cparupal/SWE645HW3_argoCD.git'
+          sh 'pwd'
+          sh 'ls'
+          dir('SWE645HW3_argoCD/surveyapp'){
+            sh "git config --global user.email 'chetana.p98@gmail.com'"
             sh 'git checkout main'
             sh 'git pull'
             sh 'pwd'
